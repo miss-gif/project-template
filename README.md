@@ -33,3 +33,15 @@
 ```
 
 8. `yarn run dev`
+
+## 추가설정
+
+### 플러그인
+
+- `yarn add -D eslint prettier eslint-plugin-react eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser`
+- `yarn dlx @yarnpkg/sdks vscode`
+
+### 경로 별칭 (임의 설정)
+
+- tsconfig.app.json
+- vite.config.ts
