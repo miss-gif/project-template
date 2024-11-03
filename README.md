@@ -1,8 +1,15 @@
 # project-template
 
 최초 작성일 : 2024.11.01
+최근 수정일 : 2024.11.04
 
-## Yarn Berry + Vite + React + TS
+## 실행 방법
+
+1. `yarn install`
+1. `yarn dlx @yarnpkg/sdks vscode`
+1. `yarn run dev`
+
+### Yarn Berry + Vite + React + TS
 
 - 사전준비
   - `npm install -g yarn`
@@ -34,14 +41,14 @@
 
 8. `yarn run dev`
 
-## 추가설정
+### 추가 적용
 
-### 플러그인
+#### 플러그인
 
 - `yarn add -D eslint prettier eslint-plugin-react eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser`
 - `yarn dlx @yarnpkg/sdks vscode`
 
-### 경로 별칭 (임의 설정)
+#### 경로 별칭 (임의 설정)
 
 - tsconfig.app.json
 - vite.config.ts
