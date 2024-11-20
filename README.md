@@ -1,30 +1,43 @@
 # project-template
 
+> Yarn Berry + Vite + React + TS 템플릿
+
 최초 작성일 : 2024.11.01
-최근 수정일 : 2024.11.04
+최근 수정일 : 2024.11.21
 
-## 실행 방법
+## ✨ 템플릿 설치 및 실행
 
-1. `yarn install`
-1. `yarn dlx @yarnpkg/sdks vscode`
-1. `yarn run dev`
+> Yarn PnP 환경 사용을 위한
+> `ZipFS` VSCode 확장 프로그램 설치가 필요
 
-### Yarn Berry + Vite + React + TS
+```bash
+npm install -g yarn # yarn 설치 (설치되어 있지 않은 경우)
 
-- 사전준비
-  - `npm install -g yarn`
-  - `ZipFS` VSCode 확장 프로그램 설치
+yarn install # 의존성 설치
+yarn dlx @yarnpkg/sdks vscode # Yarn PnP 환경 VSCode TS 설정
+yarn run dev # 개발 서버 실행
+```
 
-1. `yarn create vite ./`
-2. `yarn set version berry`
-3. `yarn install`
-4. `yarn config get nodeLinker`
-5. `yarn dlx @yarnpkg/sdks vscode`
-   5-1. `ctrl` + `p`
-   5-2. > select type
-   5-3. sdk 사용
-6. root > `.env` 파일생성
-7. `.gitignore` 파일수정
+### 템플릿 내용
+
+> Yarn PnP 환경 사용을 위한
+> `ZipFS` VSCode 확장 프로그램 설치가 필요
+
+```bash
+yarn create vite ./
+yarn set version berry
+yarn install
+yarn config get nodeLinker
+yarn dlx @yarnpkg/sdks vscode
+```
+
+#### VSCode에서 TypeScript 설정 (수동)
+
+1. `ctrl` + `p`
+2. > select type
+3. sdk 사용
+
+#### gitignore에 env를 버전 관리에서 제외
 
 ```
 # yarn Zero-Install
@@ -39,11 +52,7 @@
 .env
 ```
 
-8. `yarn run dev`
-
-### 추가 적용
-
-#### 플러그인
+#### 설치 플러그인
 
 - `yarn add -D eslint prettier eslint-plugin-react eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser`
 - `yarn dlx @yarnpkg/sdks vscode`
