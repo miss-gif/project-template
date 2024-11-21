@@ -61,3 +61,35 @@ yarn dlx @yarnpkg/sdks vscode
 
 - tsconfig.app.json
 - vite.config.ts
+
+#### 설치 라이브러리
+
+- react-router-dom
+- @tanstack/react-query
+- axios
+
+#### 폴더 구조 샘플
+
+도메인 중심 설계(Clean Architecture) 원칙에 기반한 모듈화
+
+src/
+├── assets/
+├── components/
+├── features/
+│ ├── About/
+│ │ ├── components/ # About 도메인 전용 UI
+│ │ ├── pages/ # 라우팅되는 주요 페이지
+│ │ ├── api/ # About 관련 API 모듈
+│ │ ├── routes.tsx # About 도메인 라우트 정의
+│ │ └── index.ts # About 모듈의 엔트리포인트
+│ └── OtherFeature/ # 다른 도메인 예시
+├── hooks/
+├── layouts/
+├── pages/
+│ ├── App.tsx # 최상위 앱 컴포넌트
+│ ├── index.tsx # 라우팅 및 Suspense 처리
+│ └── routes.ts # 전체 앱 라우트 통합
+├── styles/
+├── types/
+├── utils/
+└── index.tsx # 앱의 진입점
