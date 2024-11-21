@@ -34,7 +34,7 @@ yarn dlx @yarnpkg/sdks vscode
 #### VSCode에서 TypeScript 설정 (수동)
 
 1. `ctrl` + `p`
-2. > select type
+2. `> select type`
 3. sdk 사용
 
 #### gitignore에 env를 버전 관리에서 제외
@@ -67,29 +67,76 @@ yarn dlx @yarnpkg/sdks vscode
 - react-router-dom
 - @tanstack/react-query
 - axios
+- tailwindcss
+- autoprefixer
+- postcss
 
 #### 폴더 구조 샘플
 
 도메인 중심 설계(Clean Architecture) 원칙에 기반한 모듈화
 
+```
 src/
-├── assets/
-├── components/
-├── features/
-│ ├── About/
-│ │ ├── components/ # About 도메인 전용 UI
-│ │ ├── pages/ # 라우팅되는 주요 페이지
-│ │ ├── api/ # About 관련 API 모듈
-│ │ ├── routes.tsx # About 도메인 라우트 정의
-│ │ └── index.ts # About 모듈의 엔트리포인트
-│ └── OtherFeature/ # 다른 도메인 예시
-├── hooks/
-├── layouts/
-├── pages/
-│ ├── App.tsx # 최상위 앱 컴포넌트
-│ ├── index.tsx # 라우팅 및 Suspense 처리
-│ └── routes.ts # 전체 앱 라우트 통합
-├── styles/
-├── types/
-├── utils/
-└── index.tsx # 앱의 진입점
+│
+├── assets/           # 이미지, 폰트, 아이콘 등 정적 자원
+├── components/       # 공용 UI 컴포넌트 (재사용 가능한 UI 조각)
+│   ├── Button/
+│   │   ├── Button.tsx
+│   │   ├── Button.styles.ts
+│   │   └── index.ts
+│   └── Modal/
+│       ├── Modal.tsx
+│       ├── Modal.styles.ts
+│       └── index.ts
+│
+├── features/         # 기능/도메인 기반 모듈
+│   ├── About/
+│   │   ├── components/   # 해당 도메인 전용 UI
+│   │   │   ├── AboutCard.tsx
+│   │   │   └── index.ts
+│   │   ├── hooks/
+│   │   │   └── useAboutData.ts
+│   │   ├── pages/       # 라우팅되는 주요 페이지
+│   │   │   └── AboutPage.tsx
+│   │   ├── api/
+│   │   │   └── aboutApi.ts
+│   │   └── routes.tsx
+│   │   └── index.ts      # 이 모듈의 진입점
+│   ├── Contact/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── pages/
+│   │   ├── api/
+│   │   └── index.ts
+│   └── ...
+│
+├── hooks/            # 전역 레벨에서 재사용 가능한 Custom Hook
+│   └── useTheme.ts
+│
+├── layouts/          # 페이지 공용 레이아웃
+│   ├── MainLayout.tsx
+│   └── HeaderLayout.tsx
+│
+├── pages/            # 전체 앱의 라우팅을 설정
+│   ├── App.tsx
+│   ├── routes.ts
+│   └── index.tsx
+│
+├── styles/           # 전역 스타일, 테마 관련 설정
+│   ├── theme.ts
+│   ├── GlobalStyles.ts
+│   └── variables.scss
+│
+├── types/            # 전역 타입 정의
+│   ├── api.d.ts
+│   ├── common.d.ts
+│   └── ...
+│
+├── utils/            # 유틸리티 함수 (공용 로직)
+│   ├── dateUtils.ts
+│   ├── validation.ts
+│   └── ...
+│
+└── index.tsx         # 앱의 진입점
+
+```
